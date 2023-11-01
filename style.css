@@ -1,16 +1,27 @@
 #grid-container {
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap;
-    width: 350px;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
     
 }
 
-.grid-item {
+.columns {
+    /* border: 1px solid black; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+
+}
+
+.rows {
     border: 1px solid black;
-    width: 20px;
-    height: 20px
+    flex: 1;
 }
 
 .blue-background {
     background-color: blue;
 }
+

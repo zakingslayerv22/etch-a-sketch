@@ -26,17 +26,29 @@ function createRows(rowNum) {
 
 
 
-function createGrid() {
-    createColumns(16);
-    createRows(16);
+function createGrid(value) {
+    createColumns(value);
+    createRows(value);
     backgroundColorOnMouseOver();
 }
 
-createGrid();
+createGrid(16)
 
-// window.addEventListener('load', () => {
-//     makeGrid(16)
-// });
+
+function newUserGrid(value){
+    // let userPrompt = prompt("Enter a number from 1 - 100", 100)
+    value = 10
+    
+    createColumns(value)
+    createRows(value);
+}
+
+// newUserGrid(10);
+
+
+window.addEventListener('load', () => {
+    // createGrid()
+});
 
 
  
@@ -68,14 +80,6 @@ eraseBackgroundColor();
 
 
 
-function newUserGrid(){
-    let userPrompt = prompt("How many rows would you like?", 100);
-    if ((userPrompt > 100) || (userPrompt < 1) ) {
-        confirm("Please enter a number between 1 and 100");
-    }else {
-        makeGrid(userPrompt);
-        
-    }
-}
+
 
 // newUserGrid();

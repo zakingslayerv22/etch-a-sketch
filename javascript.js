@@ -1,11 +1,10 @@
 //define
 
 const gridContainer = document.querySelector("#grid-container");
-let columns = document.querySelectorAll(".columns");
 let rows = document.querySelectorAll(".rows");
 
 
-//create rows
+//create columns
 function createColumns(value) {
     for (let i = 0; i < value; i++) {
         let column = document.createElement("div");
@@ -16,7 +15,7 @@ function createColumns(value) {
 
 
 function createRows(rowNum) {
-    
+    let columns = document.querySelectorAll(".columns");
     for (let i = 0; i < columns.length; i++) {
         for (let j = 0; j < rowNum; j++) {
             let row = document.createElement("div");
@@ -30,6 +29,7 @@ function createRows(rowNum) {
 function createGrid() {
     createColumns(16);
     createRows(16);
+    backgroundColorOnMouseOver();
 }
 
 createGrid();
@@ -40,29 +40,31 @@ createGrid();
 
 
  
-const gridItems = document.querySelectorAll(".grid-item");
 
 function backgroundColorOnMouseOver() {
-    for (let i = 0; i < gridItems.length; i++) {
-    gridItems[i].addEventListener ('mouseover', (event) => {
+    for (let i = 0; i < columns.length; i++) {
+    columns[i].addEventListener ('mouseover', (event) => {
         event.target.classList.add("blue-background");
     });
 }
 };
 
-backgroundColorOnMouseOver()
+
+
+
 
 const eraserButton = document.querySelector("#eraser");
 
-function eraseGrid() {
-    eraserButton.addEventListener("click", (event) => {
-        for (let i = 0; i < gridItems.length; i++) {
-            gridItems[i].classList.remove("blue-background");
+function eraseBackgroundColor() {
+    eraserButton.addEventListener("click", (event) => { 
+        for (let i = 0; i < columns.length; i++) {
+            
+            columns[i].classList.remove("blue-background");
         }
     });
 }
 
-eraseGrid()
+eraseBackgroundColor();
 
 
 

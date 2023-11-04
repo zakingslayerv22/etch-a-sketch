@@ -32,22 +32,35 @@ function createGrid(value) {
     backgroundColorOnMouseOver();
 }
 
-createGrid(16)
-
 
 function newUserGrid(value){
-    // let userPrompt = prompt("Enter a number from 1 - 100", 100)
-    value = 10
+
+    const newGridButton = document.querySelector("#new-grid-button");
+    newGridButton.addEventListener('click', (event) => {
+        //i did not have to explicitly convert it to a 
+        //number because isNaN converts to a number first (if necessary)
+        value = +prompt("Enter a value from 2 to 100", 50);
+
+        if (isNaN(value) == true){
+            alert("Please enter a number");
+            // console.log(typeof value);
+        } else if (value <= 1 || value > 100) {
+            alert("Enter a value from 2 to 100");
+        }else {
+            //reset the grid
+            gridContainer.textContent = "";
+            //create the new grid
+            createGrid(value)
+        }
+    });
     
-    createColumns(value)
-    createRows(value);
 }
 
-// newUserGrid(10);
+newUserGrid();
 
 
 window.addEventListener('load', () => {
-    // createGrid()
+    createGrid(15)
 });
 
 

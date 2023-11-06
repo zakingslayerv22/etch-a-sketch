@@ -4,6 +4,7 @@ const gridContainer = document.querySelector("#grid-container");
 let rows = document.querySelectorAll(".rows");
 
 
+
 //create columns
 function createColumns(value) {
     for (let i = 0; i < value; i++) {
@@ -15,7 +16,7 @@ function createColumns(value) {
 
 
 function createRows(rowNum) {
-    let columns = document.querySelectorAll(".columns");
+    let columns = document.querySelectorAll(".columns");  
     for (let i = 0; i < columns.length; i++) {
         for (let j = 0; j < rowNum; j++) {
             let row = document.createElement("div");
@@ -30,6 +31,8 @@ function createGrid(value) {
     createColumns(value);
     createRows(value);
     backgroundColorOnMouseOver();
+    rainbowOnMouseOver();
+    eraseBackgroundColor();
 }
 
 
@@ -74,25 +77,55 @@ function backgroundColorOnMouseOver() {
 }
 };
 
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    color = `rgb(${r}, ${g}, ${b})`;
+    // console.log(color);
+    return color;
+}
+getRandomColor();
 
+function rainbowOnMouseOver() {
+    // columns = document.querySelectorAll(".columns");
 
+    const rainbowColorButton = document.querySelector("#rainbow-button");
+    rainbowColorButton.addEventListener('click', (event) => {
 
+        for (let i = 0; i < columns.length; i++) {
+            columns[i].addEventListener ('mouseover', (event) => {
+                //this adds inline styles and that is the reason
+                //the eraser below
+                //event.target.classList.add("white-background");
+                //does not work
+                event.target.style.backgroundColor = getRandomColor();
+            });
+        }
+    })
 
-const eraserButton = document.querySelector("#eraser");
+}
+
+// rainbowOnMouseOver();
+
 
 function eraseBackgroundColor() {
+    // columns = document.querySelectorAll(".columns");
+    const eraserButton = document.querySelector("#eraser");
     eraserButton.addEventListener("click", (event) => { 
         for (let i = 0; i < columns.length; i++) {
-            
-            columns[i].classList.remove("blue-background");
+            columns[i].addEventListener ('mouseover', (event) => {
+                
+                // event.target.classList.add("white-background");
+
+                event.target.style.backgroundColor = "white";
+            });
         }
     });
 }
 
-eraseBackgroundColor();
+// eraseBackgroundColor();
 
 
 
 
-
-// newUserGrid();

@@ -33,6 +33,7 @@ function createGrid(value) {
     backgroundColorOnMouseOver();
     rainbowOnMouseOver();
     eraseBackgroundColor();
+    increaseOpacity()
 }
 
 
@@ -72,6 +73,7 @@ window.addEventListener('load', () => {
 function backgroundColorOnMouseOver() {
     for (let i = 0; i < columns.length; i++) {
     columns[i].addEventListener ('mouseover', (event) => {
+        if (event.target.classList.remove("increase-opacity-background"));
         event.target.classList.add("blue-background");
     });
 }
@@ -82,7 +84,6 @@ function getRandomColor() {
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     color = `rgb(${r}, ${g}, ${b})`;
-    // console.log(color);
     return color;
 }
 getRandomColor();
@@ -111,21 +112,38 @@ function rainbowOnMouseOver() {
 
 function eraseBackgroundColor() {
     // columns = document.querySelectorAll(".columns");
-    const eraserButton = document.querySelector("#eraser");
+    const eraserButton = document.querySelector("#eraser-button");
     eraserButton.addEventListener("click", (event) => { 
         for (let i = 0; i < columns.length; i++) {
             columns[i].addEventListener ('mouseover', (event) => {
-                
-                // event.target.classList.add("white-background");
-
-                event.target.style.backgroundColor = "white";
+                const target = event.target;
+                if (target.classList.contains("increase-opacity-background")) {
+                    target.classList.remove("increase-opacity-background");
+                }
+                target.style.backgroundColor = "transparent";
+ 
             });
         }
     });
 }
 
-// eraseBackgroundColor();
 
+
+//Increase Opacity
+
+function increaseOpacity () {
+    const increaseOpacityButton = document.querySelector("#grey-scale-button");
+    increaseOpacityButton.addEventListener('click', (event) => {
+        columns.forEach(column => {
+            column.addEventListener('mouseover', (event) => {
+                const target = event.target;
+                target.classList.add("increase-background-opacity");
+                target.style.backgroundColor = "black";
+                target.style.opacity = (parseFloat(target.style.opacity) || 0) + 0.1;
+            });
+        });
+    });
+}
 
 
 

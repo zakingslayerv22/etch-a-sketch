@@ -17,11 +17,19 @@
 }
 
 .rows {
-    border: 1px solid black;
+    border: 1px solid green;
     flex: 1;
 }
 
 .blue-background {
     background-color: blue;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.increase-background-opacity {
+    background: rgba(0,0,0,0.1);
 }
 

@@ -2,6 +2,7 @@
 
 const gridContainer = document.querySelector("#grid-container");
 let rows = document.querySelectorAll(".rows");
+let gridDimension = document.querySelector("#slider-value");
 
 
 
@@ -30,6 +31,8 @@ function createRows(rowNum) {
 function createGrid(value) {
     createColumns(value);
     createRows(value);
+    gridDimension.textContent = `${value} x ${value}`;
+    newUserGrid();
     backgroundColorOnMouseOver();
     rainbowOnMouseOver();
     eraseBackgroundColor();
@@ -39,28 +42,20 @@ function createGrid(value) {
 
 function newUserGrid(value){
 
-    const newGridButton = document.querySelector("#new-grid-button");
-    newGridButton.addEventListener('click', (event) => {
-        //i did not have to explicitly convert it to a 
-        //number because isNaN converts to a number first (if necessary)
-        value = +prompt("Enter a value from 2 to 100", 50);
+    const newGridSlider = document.querySelector("#slider");
+    gridDimension = document.querySelector("#slider-value");
+    newGridSlider.addEventListener('change', (event) => {
 
-        if (isNaN(value) == true){
-            alert("Please enter a number");
-            // console.log(typeof value);
-        } else if (value <= 1 || value > 100) {
-            alert("Enter a value from 2 to 100");
-        }else {
-            //reset the grid
-            gridContainer.textContent = "";
-            //create the new grid
-            createGrid(value)
-        }
+        value = newGridSlider.value;
+        gridContainer.textContent = "";
+        createGrid(value)
+        gridDimension.textContent = `${value} x ${value}`;
+
     });
     
 }
 
-newUserGrid();
+
 
 
 window.addEventListener('load', () => {

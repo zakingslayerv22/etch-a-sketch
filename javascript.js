@@ -36,7 +36,8 @@ function createGrid(value) {
     backgroundColorOnMouseOver();
     rainbowOnMouseOver();
     eraseBackgroundColor();
-    increaseOpacity()
+    increaseOpacity();
+    clearGrid()
 }
 
 
@@ -63,29 +64,34 @@ window.addEventListener('load', () => {
 });
 
 
- 
+
 
 function backgroundColorOnMouseOver() {
-    for (let i = 0; i < columns.length; i++) {
-    columns[i].addEventListener ('mouseover', (event) => {
-        if (event.target.classList.remove("increase-opacity-background"));
-        event.target.classList.add("blue-background");
+    const defaultColorButton = document.querySelector("#default-color-button");
+    defaultColorButton.addEventListener('click', () => {
+        for (let i = 0; i < columns.length; i++) {
+            columns[i].addEventListener ('mouseover', (event) => {
+                event.target.style.backgroundColor = "blue";
+            });
+        }
+        
     });
-}
 };
+
+
+
 
 function getRandomColor() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
+    //why wasn't color declared first?
     color = `rgb(${r}, ${g}, ${b})`;
     return color;
 }
 getRandomColor();
 
 function rainbowOnMouseOver() {
-    // columns = document.querySelectorAll(".columns");
-
     const rainbowColorButton = document.querySelector("#rainbow-button");
     rainbowColorButton.addEventListener('click', (event) => {
 
@@ -95,14 +101,13 @@ function rainbowOnMouseOver() {
                 //the eraser below
                 //event.target.classList.add("white-background");
                 //does not work
-                event.target.style.backgroundColor = getRandomColor();
+                let target = event.target;
+                target.style.backgroundColor = getRandomColor();
             });
         }
     })
 
 }
-
-// rainbowOnMouseOver();
 
 
 function eraseBackgroundColor() {
@@ -118,6 +123,19 @@ function eraseBackgroundColor() {
                 target.style.backgroundColor = "transparent";
  
             });
+        }
+    });
+}
+
+//clear grid
+
+function clearGrid() {
+    
+    const resetButton = document.querySelector("#clear-button");
+    rows = document.querySelectorAll(".rows");
+    resetButton.addEventListener('click', (event) => {
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].style.backgroundColor = "transparent";
         }
     });
 }
@@ -139,6 +157,3 @@ function increaseOpacity () {
         });
     });
 }
-
-
-

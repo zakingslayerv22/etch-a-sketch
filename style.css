@@ -1,28 +1,40 @@
 * {
-    
+    border: 1px solid red;
 }
 
-h1, #all-controls, #container-of-grid {
+h1 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#main-container {
+#controls-and-grid {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     
 }
-
 #all-controls {
-  border: 1px solid red;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border: 1px solid blue;
+    gap: 80px;
 }
 
-.button {
+#input-section {
    
+   display: flex;
+   /* flex-direction: row-reverse; */
+   transform: rotate(-90deg);
+   /* border: 1px solid red; */
     
 }
 
+#slider {
+    border: 1px solid green;
+}
 
 
 #grid-container {

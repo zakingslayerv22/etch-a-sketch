@@ -9,25 +9,26 @@
 </head>
 <body> 
     <h1>Etch A Sketch</h1> 
-    <div id="all-controls">
-        <button id="default-color-button">Blue</button>
-        <button id="rainbow-button">Rainbow Mode</button>
-        <button id="eraser-button">Eraser</button>
-        <button id="grey-scale-button">Grey Scale</button>
-        <button id="clear-button">Clear</button>
-    </div>
-    
-    <br/>
-    <div id="container">
-        <div id="grid-container">
-        </div>
-    </div>
+        
+            <div id="all-controls">
+                <button id="default-color-button" class="button">Blue</button>
+                <button id="rainbow-button" class="button">Rainbow Mode</button>
+                <button id="eraser-button" class="button">Eraser</button>
+                <button id="grey-scale-button" class="button">Grey Scale</button>
+                <button id="clear-button" class="button">Clear</button>
+            </div>
+            
+            <br/>
+            <div id="container-of-grid">
+                <div id="grid-container">
+                </div>
+            </div>
 
-    <div class="input-section">
-        <input type="range" min="2" max="64" value="10" class="input-slider" id="slider">
-        <span id="slider-value"></span>
-        <input type="reset" id="reset">
+            <div class="input-section">
+                <input type="range" min="2" max="64" value="10" class="input-slider" id="slider">
+                <span id="slider-value"></span>
 
-    </div>
+            </div>
+   
 </body>
 </html>

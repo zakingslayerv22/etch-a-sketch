@@ -1,3 +1,30 @@
+* {
+    
+}
+
+h1, #all-controls, #container-of-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container {
+    display: flex;
+    
+}
+
+#all-controls {
+  border: 1px solid red;
+  gap: 10px;
+}
+
+.button {
+   
+    
+}
+
+
+
 #grid-container {
     padding: 10px;
     display: flex;

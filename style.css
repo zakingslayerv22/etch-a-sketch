@@ -66,6 +66,10 @@ h1 {
     
 }
 
+#slider-label, #slider-value {
+    font-size: 20px;
+    font-weight: bold;  
+}
 
 #grid-container {
     background-color: whitesmoke;

@@ -31,7 +31,7 @@ function createRows(rowNum) {
 function createGrid(value) {
     createColumns(value);
     createRows(value);
-    gridDimension.textContent = `${value} x ${value}`;
+    gridDimension.textContent = `${value} x ${value} Grid`;
     newUserGrid();
     backgroundColorOnMouseOver();
     rainbowOnMouseOver();
@@ -50,7 +50,7 @@ function newUserGrid(value){
         value = newGridSlider.value;
         gridContainer.textContent = "";
         createGrid(value)
-        gridDimension.textContent = `${value} x ${value}`;
+        gridDimension.textContent = `${value} x ${value} Grid`;
 
     });
     

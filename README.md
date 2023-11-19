@@ -1,1 +1,1 @@
-# etch-a-sketch
+The Odin Project's Etch-a-Sketch. I took more time than i expected but I have learned a lot in the process. It is not responsive to mobile devices as the focus for now is that the functions work as expected. The increaseOpacity() function is still buggy and I will hopefully revisit it in the coming days. 

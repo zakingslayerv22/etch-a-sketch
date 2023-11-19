@@ -9,13 +9,16 @@
 </head>
 <body> 
     <h1>Etch A Sketch</h1> 
+    <p class="instructions">Use the buttons on the left to interact with the grid.</p>
     <div id="controls-and-grid">
         
             <div id="all-controls">
                 <button id="default-color-button" class="button">Green</button>
                 <button id="rainbow-button" class="button">Rainbow Mode</button>
                 <button id="eraser-button" class="button">Eraser</button>
-                <button id="grey-scale-button" class="button">Increasing Opacity (Beta)</button>
+                <button id="grey-scale-button" 
+                    title="This feature is still under development and might not work as expected."  
+                    class="button">Increasing Opacity &#9432</button>
                 <button id="clear-button" class="button">Clear</button>
             </div>
             
@@ -26,7 +29,7 @@
             </div>
 
          <div id="slider-and-value-div">
-        <div>Slide to Change Grid Size</div>
+        <div id="slider-label">Slide to change Grid Size</div>
         <div id="input-section"> 
             <input type="range" min="2" max="64" value="10" class="input-slider" id="slider">
         </div>

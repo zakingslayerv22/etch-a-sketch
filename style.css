@@ -1,5 +1,38 @@
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+body {
+    background:
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#474bff 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#474bff 68% 70%,#0000 72%) 10px 10px/calc(2*10px) calc(2*10px),
+      radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#474bff 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+      radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#474bff 68% 70%,#0000 72%) 0 0/calc(2*10px) calc(2*10px),
+      repeating-conic-gradient(#f4c2c2 0 25%,#0000 0 50%) 0 0/calc(2*10px) calc(2*10px),
+      radial-gradient(#0000 66%,#474bff 68% 70%,#0000 72%) 0 calc(10px/2)/10px 10px
+      #f4c2c2;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    outline: none;
+    background-color: #6264f7;
+    box-shadow: 0 3px #999;
+    transition: .2s ease-in-out 0s;
+}
+
+button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+button:hover{
+    background-color: #070bfa;
+    font-weight: bold;
+    transform: scale(1.1)
 }
 
 h1 {
@@ -21,7 +54,7 @@ h1 {
     justify-content: center; 
     align-items: center; 
     border: 1px solid blue;
-    gap: 80px;
+    gap: 50px;
 }
 
 #slider-and-value-div {
@@ -35,6 +68,7 @@ h1 {
 
 
 #grid-container {
+    background-color: whitesmoke;
     padding: 10px;
     display: flex;
     border: 1px solid black;

@@ -19,7 +19,7 @@ button {
     border-radius: 5px;
     color: whitesmoke;
     outline: none;
-    background-color: #6264f7;
+    background-color: #585bfb;
     box-shadow: 0 3px #999;
     transition: .2s ease-in-out 0s;
 }
@@ -32,7 +32,7 @@ button:active {
 button:hover{
     background-color: #070bfa;
     font-weight: bold;
-    transform: scale(1.1)
+    transform: scale(1.05)
 }
 
 h1 {
@@ -87,7 +87,7 @@ h1 {
 }
 
 .rows {
-    border: 1px solid green;
+    border: 1px solid black;
     flex: 1;
 }
 

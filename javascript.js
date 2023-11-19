@@ -71,7 +71,7 @@ function backgroundColorOnMouseOver() {
     defaultColorButton.addEventListener('click', () => {
         for (let i = 0; i < columns.length; i++) {
             columns[i].addEventListener ('mouseover', (event) => {
-                event.target.style.backgroundColor = "blue";
+                event.target.style.backgroundColor = "green";
             });
         }
         

@@ -18,22 +18,18 @@ h1 {
 #all-controls {
     display: flex;
     flex-direction: column;
+    justify-content: center; 
     align-items: center; 
     border: 1px solid blue;
     gap: 80px;
 }
 
-#input-section {
-   
-   display: flex;
-   /* flex-direction: row-reverse; */
-   transform: rotate(-90deg);
-   /* border: 1px solid red; */
+#slider-and-value-div {
+    display: flex;
+    margin-left: 610px; 
+    align-items: center; 
+    gap: 20px;
     
-}
-
-#slider {
-    border: 1px solid green;
 }
 
 

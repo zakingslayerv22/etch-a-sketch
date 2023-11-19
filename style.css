@@ -26,6 +26,7 @@ h1 {
 
 #slider-and-value-div {
     display: flex;
+    flex-direction: column;
     justify-content: right; 
     align-items: center; 
     gap: 20px;
